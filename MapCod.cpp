@@ -1,0 +1,27 @@
+// MapCod.cpp: implementation of the CMapCod class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "stdafx.h"
+#include "fttsp.h"
+#include "MapCod.h"
+
+#ifdef _DEBUG
+#undef THIS_FILE
+static char THIS_FILE[]=__FILE__;
+#define new DEBUG_NEW
+#endif
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+
+CMapCod::CMapCod()
+{
+
+}
+
+CMapCod::~CMapCod()
+{
+
+}

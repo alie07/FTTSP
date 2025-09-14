@@ -1,0 +1,622 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 111
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About FTTSP"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    ICON            IDI_ICON_MEMO,IDC_STATIC,11,18,20,20
+    LTEXT           "FTTSP Version ",IDC_ABOUT_VERS,40,17,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2016 SSQ ENGINEERING",IDC_STATIC,40,30,
+                    173,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+    PUSHBUTTON      "Read DLLs version",IDC_DLL_VERSION,50,63,135,21
+    CONTROL         "List1",IDC_LIST_DLL,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | NOT WS_VISIBLE | WS_TABSTOP,7,42,221,
+                    62,WS_EX_DLGMODALFRAME
+END
+
+IDD_FTTSP_DIALOG DIALOGEX 0, 0, 341, 305
+STYLE DS_MODALFRAME | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Final Test TSP"
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_PRODUCT,72,18,60,156,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRODUCT_REV,72,34,34,156,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PART_ID,72,50,34,138,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_FLOW,72,66,34,120,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_HANDLER,72,81,120,67,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_HANDLER_DLL,72,97,120,67,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_HANDLER_ID,72,116,58,12,ES_UPPERCASE | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_LOT_NUMBER,72,133,58,12,ES_UPPERCASE | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_SUB_LOT_NUMBER,72,148,58,12,ES_UPPERCASE | 
+                    ES_AUTOHSCROLL
+    COMBOBOX        IDC_LB_REF,72,163,120,67,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_LB_NUMBER,72,180,34,12,ES_UPPERCASE | ES_AUTOHSCROLL
+    COMBOBOX        IDC_CABLE_REF,72,195,120,67,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_CABLE_NUMBER,72,212,34,12,ES_UPPERCASE | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_OP_NAME,207,159,120,12,ES_UPPERCASE | ES_AUTOHSCROLL
+    CONTROL         "0",IDC_CHECK_SITE_1,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,217,118,20,10
+    CONTROL         "1",IDC_CHECK_SITE_2,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,247,118,20,10
+    CONTROL         "2",IDC_CHECK_SITE_3,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,276,118,20,10
+    CONTROL         "3",IDC_CHECK_SITE_4,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,304,118,20,10
+    CONTROL         "4",IDC_CHECK_SITE_5,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,217,130,20,10
+    CONTROL         "5",IDC_CHECK_SITE_6,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,247,130,20,10
+    CONTROL         "6",IDC_CHECK_SITE_7,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,276,130,20,10
+    CONTROL         "7",IDC_CHECK_SITE_8,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,304,130,20,10
+    CHECKBOX        "Set",IDC_DEGRADED_MODE,207,74,32,12,BS_PUSHLIKE
+    COMBOBOX        IDC_CONTROLLERS,245,73,40,45,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SOCKETS,290,73,40,46,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    DEFPUSHBUTTON   "Start FT",IDOK,200,207,41,16,WS_GROUP
+    PUSHBUTTON      "Exit",IDCANCEL,293,207,41,16
+    CONTROL         162,IDC_STATIC,"Static",SS_BITMAP | SS_CENTERIMAGE | 
+                    SS_SUNKEN,213,11,108,35
+    LTEXT           "Product:",IDC_STATIC,13,19,28,8
+    LTEXT           "Part ID:",IDC_STATIC,13,52,25,8
+    LTEXT           "Flow:",IDC_STATIC,13,69,18,8
+    LTEXT           "Handler:",IDC_STATIC,13,84,28,8
+    LTEXT           "Handler Dll:",IDC_STATIC,13,101,38,8
+    LTEXT           "Lot Number:",IDC_STATIC,13,135,40,8
+    GROUPBOX        "Degraded Mode",IDC_STATIC,200,55,134,40,WS_GROUP
+    LTEXT           "Controllers",IDC_STATIC,246,64,34,8,NOT WS_GROUP
+    LTEXT           "Sockets",IDC_STATIC,290,64,27,8,NOT WS_GROUP
+    GROUPBOX        "Setup",IDC_STATIC,7,6,189,227
+    LTEXT           "Product Rev:",IDC_STATIC,13,36,43,8
+    CONTROL         "Mode:",IDC_MODE,"Static",SS_SIMPLE | SS_CENTERIMAGE | 
+                    SS_SUNKEN | WS_GROUP,7,290,327,11
+    LTEXT           "Load board ref.:",IDC_STATIC,13,165,50,8
+    LTEXT           "Cable ref.:",IDC_STATIC,13,198,49,8
+    LTEXT           "Load board num.:",IDC_STATIC,13,182,56,8
+    LTEXT           "Cable num.:",IDC_STATIC,13,214,38,8
+    GROUPBOX        "Operator Name",IDC_STATIC,200,146,134,33,WS_GROUP
+    LTEXT           "Sub Lot Number:",IDC_STATIC,13,150,54,8
+    GROUPBOX        "Site(s) used",IDC_STATIC_SITE_USED,200,96,134,45,
+                    WS_GROUP
+    LTEXT           "Static",IDC_STATIC_SFT_REV,139,19,51,10
+    LTEXT           "Tester type:",IDC_STATIC,13,236,38,8
+    LTEXT           "<Tester>",IDC_TESTER_TYPE,72,236,119,8
+    GROUPBOX        "Engi Options",IDC_ENGI_FRAME,7,249,327,36
+    CONTROL         "Engi options",IDC_CHECK_ENGI_OPT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,200,188,55,10
+    LTEXT           "Test Prgm",IDC_STATIC,13,263,33,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_TPRGM_EDIT,72,263,207,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse",IDC_BROWSE_TPGRM,287,262,41,14
+    CONTROL         "RTM",IDC_RTM,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | 
+                    WS_TABSTOP,293,188,32,10
+    LTEXT           "Handler ID",IDC_STATIC,14,118,35,8
+    CONTROL         "All",IDC_CHECK_SITES_ALL,"Button",BS_AUTO3STATE | 
+                    WS_DISABLED | WS_TABSTOP,270,102,23,10
+END
+
+IDD_FTTSP_MAINWINDOW DIALOGEX 0, 0, 559, 324
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Final Test TSP"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Start Handler",IDOK,393,306,50,14
+    PUSHBUTTON      "Quit",IDCANCEL,500,306,50,14
+    CONTROL         166,IDC_STATIC,"Static",SS_BITMAP | SS_CENTERIMAGE | 
+                    SS_SUNKEN,10,260,226,41
+    CONTROL         "List1",IDC_SKTS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_AUTOARRANGE | WS_BORDER | WS_TABSTOP,
+                    243,7,305,243
+    LTEXT           "Part ID:",IDC_STATIC,22,75,25,8
+    LTEXT           "Flow:",IDC_STATIC,22,91,18,8
+    LTEXT           "Temperature:",IDC_STATIC,22,109,43,8
+    LTEXT           "Handler:",IDC_STATIC,23,203,28,8
+    LTEXT           "Load Board :",IDC_STATIC,23,218,42,8
+    LTEXT           "Lot number:",IDC_STATIC,22,126,50,8
+    LTEXT           "Tester:",IDC_STATIC,23,186,23,8
+    CTEXT           "Last test:",IDC_STATIC,250,270,30,8,0,WS_EX_RIGHT
+    CTEXT           "Session:",IDC_STATIC,250,286,30,8
+    CHECKBOX        "Engineering Mode",IDC_ENGI_MODE,374,266,73,10
+    PUSHBUTTON      "Stop Handler",IDC_STOP_HANDLER,447,306,50,14,
+                    WS_DISABLED
+    LTEXT           "",IDC_LASTTESTDURATION,285,268,60,11,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    LTEXT           "",IDC_SESSIONDURATION,285,285,60,11,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    CTEXT           "Static",IDC_PROGRAMNAME,374,280,168,16,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    CONTROL         "Static",IDC_PART_ID,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_CENTERIMAGE | WS_GROUP,81,71,143,16
+    CONTROL         "Static",IDC_FLOW,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_CENTERIMAGE | WS_GROUP,81,88,143,16
+    CONTROL         "Static",IDC_TEMPERATURE,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_CENTERIMAGE | WS_GROUP,81,105,143,16
+    CONTROL         "Static",IDC_TESTER,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_CENTERIMAGE | WS_GROUP,81,183,142,16
+    CONTROL         "Static",IDC_HANDLER,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_CENTERIMAGE | WS_GROUP,81,199,142,16
+    CONTROL         "Static",IDC_LOADBOARD,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_CENTERIMAGE | WS_GROUP,81,215,142,16
+    CONTROL         "Static",IDC_LOT_NUMBER,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_CENTERIMAGE | WS_GROUP,81,123,143,16
+    CONTROL         "Static",IDC_CABLE,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_CENTERIMAGE | WS_GROUP,81,231,142,16
+    LTEXT           "Cable:",IDC_STATIC,23,234,21,8
+    LTEXT           "Product:",IDC_STATIC,22,40,28,8
+    CONTROL         "Static",IDC_PRODUCT,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_CENTERIMAGE | WS_GROUP,81,37,143,16
+    GROUPBOX        "Product information",IDC_STATIC,11,7,224,158,BS_CENTER,
+                    WS_EX_DLGMODALFRAME | WS_EX_CLIENTEDGE
+    GROUPBOX        "Interface information",IDC_STATIC,10,171,225,80,
+                    BS_CENTER,WS_EX_DLGMODALFRAME | WS_EX_CLIENTEDGE
+    GROUPBOX        "Time durations",IDC_STATIC,243,257,111,44,BS_CENTER
+    GROUPBOX        "Program information",IDC_STATIC,360,257,190,44,
+                    BS_CENTER
+    LTEXT           "Product rev:",IDC_STATIC,22,58,40,8
+    CONTROL         "Static",IDC_PRODUCT_REV,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_CENTERIMAGE | WS_GROUP,81,54,143,16
+    RTEXT           "Static",IDC_TSP_INFO,10,306,375,14,SS_CENTERIMAGE
+    LTEXT           "Operator:",IDC_STATIC,22,24,30,8
+    CONTROL         "",IDC_OP_NAME,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_CENTERIMAGE | WS_GROUP,81,20,143,16
+    LTEXT           "Lot number:\n(Subcontractor)",IDC_SUB_LOT_NUM,22,139,50,
+                    17
+    CONTROL         "-",IDC_SUB_LOT,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_CENTERIMAGE | WS_GROUP,81,140,143,16
+END
+
+IDD_LOADPROGRAM_DIALOG DIALOG DISCARDABLE  0, 0, 426, 222
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Load test program"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,364,7,55,14,WS_DISABLED
+    PUSHBUTTON      "Cancel",IDCANCEL,364,21,55,14
+    EDITTEXT        IDC_INFO,7,50,412,165,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | WS_VSCROLL
+    CONTROL         162,IDC_STATIC,"Static",SS_BITMAP | SS_CENTERIMAGE | 
+                    SS_SUNKEN,7,7,108,35
+    EDITTEXT        IDC_MESSAGE,145,10,195,34,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_BORDER | NOT WS_TABSTOP
+END
+
+IDD_PASSWORD DIALOG DISCARDABLE  0, 0, 127, 49
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Please Enter Password"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,28,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,70,28,50,14
+    EDITTEXT        IDC_PASSWORD,44,7,40,14,ES_CENTER | ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,26,0,0
+ PRODUCTVERSION 1,26,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "SSQ Engineering\0"
+            VALUE "FileDescription", "Final Test TSP\0"
+            VALUE "FileVersion", "1.26\0"
+            VALUE "InternalName", "FTTSP\0"
+            VALUE "LegalCopyright", "Copyright  2023\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "FTTSP.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Final Test TSP Application\0"
+            VALUE "ProductVersion", "1.26\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 104
+        HORZGUIDE, 15
+    END
+
+    IDD_FTTSP_DIALOG, DIALOG
+    BEGIN
+        VERTGUIDE, 7
+        VERTGUIDE, 13
+        VERTGUIDE, 72
+        VERTGUIDE, 191
+        VERTGUIDE, 200
+        VERTGUIDE, 293
+        VERTGUIDE, 334
+        BOTTOMMARGIN, 289
+        HORZGUIDE, 11
+        HORZGUIDE, 188
+        HORZGUIDE, 211
+        HORZGUIDE, 223
+        HORZGUIDE, 226
+        HORZGUIDE, 242
+        HORZGUIDE, 255
+        HORZGUIDE, 269
+        HORZGUIDE, 275
+    END
+
+    IDD_LOADPROGRAM_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 419
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 215
+    END
+
+    IDD_PASSWORD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 120
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 42
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_FTTSP_DIALOG DLGINIT
+BEGIN
+    IDC_PRODUCT, 0x403, 2, 0
+0x0031, 
+    IDC_PRODUCT, 0x403, 2, 0
+0x0032, 
+    IDC_PRODUCT, 0x403, 2, 0
+0x0033, 
+    IDC_PRODUCT, 0x403, 2, 0
+0x0034, 
+    IDC_PRODUCT, 0x403, 2, 0
+0x0035, 
+    IDC_PRODUCT_REV, 0x403, 1, 0
+"\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_SSQ_LOGO_L       BITMAP  DISCARDABLE     "res\\SSQ_l.bmp"
+IDB_SSQ_LOGO         BITMAP  DISCARDABLE     "res\\SSQ_s.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About FTTSP..."
+    IDS_ERROR_ABNORMAL_TERMINATION 
+                            "Program Terminated abnormally.\nPlease contact Test Engineering group."
+    IDS_ERROR_NO_SERVER_NAME 
+                            "There is no SERVER_NAME global variable set.\nPlease set it and restart TSP."
+    IDS_ERROR_NO_SETUP      "There are no setups defined in directory '%1'."
+    IDS_ERROR_CANNOT_OPEN_SETUP "Setup File '%1' could not be opened."
+    IDS_ERROR_SETUP         "There is an Error in the Setup File '%s' at line %d."
+    IDS_ERROR_CURRENT_RELEASE 
+                            "There is no Configuration for this product for current UI release."
+    IDS_ERROR_REGISTRY_READ "Cannot Open Registry for UI revision check.\nPlease contact Test Engineering group"
+    IDS_ERROR_NUMBER_CONFIGURATIONS 
+                            "There are %d Configurations for the same setup!"
+    IDS_ERROR_NO_DLL        "There are no DLLs in directory '%1'."
+    IDS_ERROR_CREATE_LOAD_PROGRAM "Cannot Create Load Program Info dialog"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERROR_SYNCHRO_FLAG  "Unable to create synchro flags"
+    IDS_ERROR_CREATE_PIPE   "Unable to open communication pipe"
+    IDS_ERROR_TESTER_INSTANCIATION_MAV 
+                            "An Error occured while instanciating Tester.\nVerify Tester_type is one of the following:\nMAV_HD, MAV_PT"
+    IDS_ERROR_DESTROY_DIRECTORY "Directory '%s' has not been destroyed."
+    IDS_ERROR_CREATE_DIRECTORY "Directory '%s' cannot be created."
+    IDS_ERROR_ACCESS_DIRECTORY "Directory '%s' cannot be accessed."
+    IDS_ERROR_FILE_NOT_FOUND "File '%s' does not exists"
+    IDS_ERROR_FILE_OPEN     "File '%s' could not be opened."
+    IDS_ERROR_FILE_COPY     "File could not be copied.\nSource: %s\nDestination: '%s'"
+    IDS_ERROR_UNZIP         "Unzip ERROR: %s"
+    IDS_ERROR_TIMEOUT_OPEN_PIPE "TIMEOUT during pipe  connexion"
+    IDS_ERROR_COMMUNICATION "ERROR during pipe  connexion"
+    IDS_ERROR_DLL_OPEN      "Cannot open DLL '%s'."
+    IDS_LOADING_DLL         "Loading DLL: '%s'..."
+    IDS_LOADING_PRGM        "Loading Program: '%s'..."
+    IDS_PASS                "PASS\r\n"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_FAIL                "FAIL\r\n"
+    IDS_START_UI            "Starting Nextest(R) UI Child Process..."
+    IDS_WAIT_PRGM_LOAD      "Waiting for the program to load in UI..."
+    IDS_WAIT_PRGM_INFO      "Waiting for the program to send some info..."
+    IDS_FETCHING_MAPCODES   "Program has Mapcodes enabled. Starting Fetch of them...\r\n"
+    IDS_MAPCODE_FETCHED     "MapCod %s Fetched: %s in %s\r\n"
+    IDS_PRGM_LOADED         "Program Ready for Test Session.\r\n"
+    IDS_HND_INIT            "Initialize Handler..."
+    IDS_ERROR_UI            "An Error occured within UI. Please Quit."
+    IDS_ERROR_UI_RELEASE    "Does not know how to start UI for Release '%s'."
+    IDS_START_HANDLER       "Starting Handler Child Process..."
+    IDS_ERROR_INVALIDBIN    "Invalid Bin received from Tester. Test Session Aborted. Please Call Engineering."
+    IDS_DLL_VERSION         "==> DLL version : %s.\r\n"
+    IDS_ERROR_VERSION_DLL   "Not available"
+    IDS_ERROR_NO_PC_NAME    "There is no PC NAME."
+    IDS_NO_SUBCONTRACTOR    "No specific subcontractor routine!"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERROR_PATH_SUBCONTRACTOR 
+                            "Path file for subcontractor routine is not set.\nPlease set it and restart FTTSP."
+    IDS_ERROR_SUB_PARAM     "AUTOMATIC Mode:\r\nOne of the parameters is not correct!"
+    IDS_ERROR_SUB_PATH      "Specific path of subcontractor is missing!\nPlease set it and restart FTTSP."
+    IDS_ERROR_SUB_PARSING   "Error on parsing subcontractor data!"
+    IDS_ERROR_APPLI         "Bin.txt file is not or wrong created! Test Session Aborted. Please call engineering!"
+    IDS_START_PHOENIX       "Initialiaze Phoenix application..."
+    IDS_ERROR_PHOENIX_ID    "Can't get Phoenix ID!\r\n"
+    IDS_PHOENIX_NOT_STARTED "Please start Phoenix application before FTTSP\r\n"
+    IDS_ERROR_PHOENIX_CONNECT "Can't connect to Phoenix server!\r\n"
+    IDS_ERROR_PHOENIX_PIPE  "Phoenix pipe error"
+    IDS_ERROR_TIMER         "Timer setup error!"
+    IDS_ERROR_TESTER_INSTANCIATION_TX 
+                            "An Error occured while instanciating Tester with TestXentral"
+    IDS_ERROR_TESTER_INSTANCIATION_PHOENIX 
+                            "An Error occured while instanciating Phoenix tester"
+    IDS_ERROR_PHOENIX_PRGM  "Can't load test program in Phoenix!\r\n"
+    IDS_PHOENIX_CONNECT     "Phoenix connection..."
+    IDS_PHOENIX_ID          "Phoenix ID: "
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERROR_TESTER_INSTANCIATION 
+                            "An Error occured while instanciating tester"
+    IDS_ERROR_FETCH_MAPCODES "Unable to retreive mapcodes!\r\n"
+    IDS_INSTALL_PRGM        "Install program %s in working directory..."
+    IDS_ERROR_HND_INIT      "Handler initialization error -> Handler ID not found!\n"
+    IDS_START_TX            "Starting TestXentral Child Process"
+    IDS_WAIT_PRGM_LOAD_TX   "Waiting for test program to load in TestXentral"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// French (France) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRA)
+#ifdef _WIN32
+LANGUAGE LANG_FRENCH, SUBLANG_FRENCH
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DEBUG_DIALOG DIALOGEX 65486, 0, 273, 116
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_DEBUG,7,7,259,102,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | NOT WS_BORDER | WS_VSCROLL | WS_HSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DEBUG_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON_MEMO           ICON    DISCARDABLE     "res\\memory-96.ico"
+IDI_ICON2               ICON    DISCARDABLE     "res\\icon5.ico"
+IDI_ICON1               ICON    DISCARDABLE     "res\\ico00002.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 24
+//
+
+1                       24      DISCARDABLE     "res\\manifest.xml"
+#endif    // French (France) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\idr_main.ico"
+IDI_ICONPASS            ICON    DISCARDABLE     "res\\icon1.ico"
+IDI_ICON_UNSUSED        ICON    DISCARDABLE     "res\\ico00001.ico"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\FTTSP.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\FTTSP.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

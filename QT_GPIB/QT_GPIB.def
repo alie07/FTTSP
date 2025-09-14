@@ -1,0 +1,14 @@
+; QT_GPIB.def : Declares the module parameters for the DLL.
+
+LIBRARY      "QT_GPIB"
+DESCRIPTION  'QT_GPIB Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+	HndInit    @ 1
+	HndPoll    @ 2
+	HndBin     @ 3
+	HndSet     @ 4
+	HndGet     @ 5
+	HndRelease @ 6
+	HndGetVers @ 7

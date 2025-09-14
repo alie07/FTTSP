@@ -1,0 +1,14 @@
+; UTech_RS232.def : Declares the module parameters for the DLL.
+
+LIBRARY      UTech_RS232 
+DESCRIPTION  UTech_RS232 Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+	HndInit    @ 1
+	HndPoll    @ 2
+	HndBin     @ 3
+	HndSet     @ 4
+	HndGet     @ 5
+	HndRelease @ 6
+	HndGetVers @ 7

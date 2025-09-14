@@ -1,0 +1,282 @@
+						MODIFICATIONS LIST FOR FINAL TSP
+						================================
+
+//Rasco_SO1000_GPIB 1.1 : 08/12/2023 (LBs)
+				- Added termination character ";" after binning data in "BINON" command
+
+//Rasco_SO1000_GPIB 1.0 : 13/11/2023 (LBs)
+				- Creation
+
+//FTTSP 1.26	:/03/2023 (LBs)
+				- Added support of TestXentral (TX) for testers Northstar Javelin
+
+//FTTSP 1.25	:20/03/2023 (LBs)
+				- Install path now return fixed path for PT because Hang-up and errors due to network issues at UTAC
+
+//ManualHandler 2.1 :10/2021(LBs)
+				- Don't ask again for mask in pop-up window when run in loop is active
+
+//FTTSP 1.24	:/07/2021 (LBs)
+				- All sockets/sites checked by default in "site(s) used" combo
+				- Added Handler id variable to be entered in edit box on main window
+				- Summary v3.4: Added line for handler id.
+				- Add a line in main window for global yield
+
+//ManualHandler 2.0 :10/07/2020(LBs)
+				- Added edit control box to enter number of run
+				- Renumbered head number in output mask 1->8 to 0->7
+
+//FTTSP 1.23	:26/05/2020 (LBs)
+				- Increased character limitation in MapCod (254->1024 for Name, 4->256 for units)
+
+//FTTSP 1.22	:03/04/2020 (LBs)
+				- Added flow string in summaries file name
+					(file name format is now: <Lot>-<PartID>-<Flow>-<Date>-<Time>-S<session>-<fts/summary>.txt)
+
+//FTTSP 1.21	:28/11/2019 (LBs)
+				- For HD tester: Test program unzip destination directory must be local
+					-> CHDUI::GetInstallPath() will return fixed string "E:\Production\TstPrgm" like TSP
+
+//FTTSP 1.20	:19/06/2019 (LBs)
+				- Added compatibility with UI version h3.9.5A
+
+//RASCO DLL 1.7 17/06/2019 (LBs)
+				- Tried to reproduce following e-mail from OQa on February, 25th 2015: (no sources found)
+					"On current dll before sending the 1st binning we have an ibclr() command.
+					This command takes time and could mask some transfer information between GPIB Box and handler."
+
+//UTech DLL 1.2 16/09/2016 (LBs)
+				- Start of test with no active socket (in case of all sites bumped) directly acknowledged with all bins=0 $LABS-2605
+
+//UTech DLL 1.1 27/04/2016 (LBs)
+				- Debug @UID + Disable heads number count for testing less than 16 DUT $LABS-2555
+
+//FTTSP 1.18	: 12/04/2016 (LBs)
+                - Removed "0" before "10" in RUN command to Alcatraz $LABS-2533
+                - Replaced all references to "Alcatraz" by "Phoenix" $LABS-2543
+				- Debugged Mapcod recording in logs $LABS-2544
+				- Replaced Inside logo by SSQ logo $LABS-2527
+				- Version numbers added to file properties $LABS-2538
+                - Set timeout for Phoenix answer to 30s $LABS-2546
+
+//UTech DLL 1.0 08/04/2016 (LBs)
+                - Creation (Communication by RS232) $LABS-2526
+                        
+//FTTSP 1.17	(ENV 1.23) : 06/10/2014 (DPd)
+				- Add UTAC RTM functionalities to write bin result in windows registry
+				
+				(ENV 1.23) : 19/01/2015 (Dpd)
+				- Prevent network connection issue during session files access
+					+ Save file name in member var in CSessionMapcods / CSessionSummary
+					+ Check file status before write and try to reopen the file once when popup message to retry if needed (while loop)
+						- CSessionMapCods::AddTest()
+						- CSessionSummary::Close()
+
+						
+//AETRIUM DLL 1.4 (ENV 1.23) : 22/09/2014 (DPd)
+				- Add QUES Event Reg read after bin signals return (HndBin) to reset the register (bin4 over count issue UTAC)
+
+	
+//RASCO DLL 1.6 (ENV 1.22) : 22/08/2014 (DPd)
+				- Add QUES Event Reg read after bin signals return to reset the register (bin4 over count issue UTAC)
+
+				
+//MANUAL DLL 1.3 (ENV 1.22) : 18/07/2014 (DPd)
+				- Add dialog box to select ready device in poll function (enable RASCO emulation with ready CS before SOT).
+						
+
+//FTTSP 1.16 	(ENV 1.22) : 02/09/2014 (DPd)
+				- Add Engi Options panel to choose test program.
+
+				(ENV 1.22) : 17/08/2014 (DPd)
+				- Implement Alcatraz tester interface
+					+ Create CAlcatraz class to manage test with Alcatraz/NI tester
+					+ Full modifications are written in document: "FTTSP Alcatraz Development & Validation Plan.docx" in FTTSP doc folder.
+				
+				
+//FTTSP 1.15 	(ENV 1.21) : 29/04/2014 (DPd)
+				- Make global resource paths dynamic to enable engi / prod environment setup.
+					+ Read command line switch (/engi) with CFTTSPCmdLineInfo class
+					+ Add #define TESTFLOOR_PATH
+					+ Create GetSummariesPath() method in FTTSP.h
+					+ Update get path methods according to prod/engi mode
+					+ Update SessionSummary.cpp to use ptrApp->GetSummariesPath()
+				- Add bypass value setup file checksum
+
+				
+//FTTSP_1_14	: 20/02/2014 (CDs)
+				- Add the subcontractor lot number into the pipe between FTTSP and UI. 
+					+ Due to the fact that the test program generates some PGP file (59U16) with subcontractor lot number into the nomenclature,FTTSP has to send the sub lot number to the test program .
+					+ CFTTSPMainWindow class. 
+						o void CFTTSPMainWindow::OnFirstSession(): add the data into the pipe
+
+						
+//FTTSP_1_13	: 06/01/2014
+				- Modification of the check concerning the lot number length. 
+					+ Due to the fact that UMC has a standard of 5 digits instead of 6 (LF FONDRY), the program is not able to lunch the UMC lot.
+					+ Change the check to verify is the lot number is > 3. 
+						o BOOL CFTTSPDlg::CheckGatewayData(CSetupGateway * pSubGateway) 
+						o BOOL CFTTSPDlg::CheckForStart()
+
+						
+//RASCO DLL 1.5 : 25/10/2013 (cds)
+				- Bug correction on TTL box initialization.
+					+ Enable the Questionable event reg. on byte1 bit [4..0]: set it in HEX ans not in DEC
+				- Modification to manage the test mask instead of nb max of sockets.
+					
+
+//TESEC DLL 1.7 : 09/07/2013 (pgy)
+//				- Bin order for DUT from 1 to 16 was not correct. Handler is waiting for DUT 16 to 1.
+				The issue was in HndBin function . 
+				==> replace : for(int i=0;i<32;i++)
+				with :        for(int i=31;i>=0;i--)
+
+
+//TESEC DLL 1.6 : 08/07/2013 (pgy)
+//				- After first run in UTAC, Only the first bin was send to the handler.
+				The issue was in HndBin function . 
+				==> replace : for(int i=0;i<=32;i--)
+				with :        for(int i=0;i< 32;i++)
+ 
+   
+
+//TESEC DLL 1.5 : 05/07/2013 (pgy)
+//				- change the HndBin function to use a test mask i/o a simple int that contains the number of active DUT.
+//				  this is done to match with all other HndBin function in the diferent DLL and to solve a crash issue in UTAc
+
+
+
+//SeikoEpsonDll 1.4 : 29/03/2013 (pgy)
+//				- Remove the check : Bin = 0 in the seiko epson Dll (see HndBin Function) as it seems 
+//				  that the check is done on device that are not tested !!!!!!!!				
+
+
+//SeikoEpsonDll 1.13 : 28/03/2013 (pgy)
+//				- Replace size_t with a int in the HndBin function to avoid the crash in production.
+//				  size_t is an unsigned int that can never be < 0that is the test to finish thefor loop !!!!				
+
+
+
+//FTTSP_1_12 (CDE 04/03/2013)
+	- DLL SEIKO EPSON: => V1.2
+		o Modification of the Poll and Bin function.
+			+ FTTSP gives the SOCKET MASK under test instead of the number of die under test. Then the management has been updated!
+
+//FTTSP_1_12 (CDE 06/02/2013)
+	- FTTSP modification: 
+		o Add management of the PART ID into the pipe communication between FTTSP and UI pgm test.
+			+ modification done into OnFirstSession() method.
+
+//FTTSP_1_11 (CDE 26/12/2012)
+	- DLL AETRIMUM modification => V1.3
+		o Bug correction on the handler asynchrony management. (HndPoll function). when several sites are awaiting but one is missing, then after the 5 seconds, the test was started with the sites ready. 
+                  The correct behavior is to not start the test.
+
+//FTTSP_1_11 (CDE 22/11/2012)
+	- Overall: 
+		o Add site used selection on the HMI to give the possibility to UTAC to manage the socket on test.
+		o Add setup file revision management: shown on HMI and summaries files. 
+		o Add setup file CRC management.
+		o Change the way of how to mange the test mask passed to the handler DLL. Pass the test mask instead of the number of socket under test. It means that all DLL have to be modified.
+		o Modification of the AETIRUM and MANUAL handler DLL.
+	- Details:
+		o Configuration class:
+			+ Add GetSetupRev method and strSetupRev attribut: to manage the setup file revision.
+			+ Add iTestMask attribut to manage the test mask passed to the DLL.
+			+ Update the class to manage all the previous modification.
+		o FTTSP.h : minor revision increased to 11
+		o FTTSPDlg class: 
+			+ Add GetSiteUsed method to return the site used, check by the end user.
+			+ Add szSetupRev ans m_iRefCKS attributs to manage the setup file revision. Add the management linked.
+			+ Add Event OnCheckSite management linked to the site used checkboxes.
+			+ Add displaying of the setup file revision on the HMI.
+			+ Bugg correction in CheckGatewayData. The nIndex was not well incremented.
+		o FTTSPMainWaindow class:
+			+ Change the icons linked to the socket tested: now, a cross means "not used", a 'P' means pass and 'F' means fail.
+		o LoadProgram class:
+			+ Modification of the information passed to the handler: now it is a socket test mask instead of the number of socket under test.
+			+ Force UI to be in production mode and not in Engi.
+		o SessionMapCods class:
+			+ Add the Setup file revision information into the summary generation.
+		o SessionSummary class:
+			+ Add the Setup file revision information into the summary generation.
+			+ Summary minor revision increased to 3.
+	
+//FTTSP_1_10 (CDE 30/10/2012)
+	- Modification into FTTSPDlg class:
+	  o in case of using FTTSP in automatic mode (UTAC type), the product number was not selected automatically. The reason was the FillProduct() methods was called after the CheckGatewayData() one.
+
+//FTTSP_1_9	(CDE 27/06/2012)
+	- Modification to show several error messages when it is used with UTAC gateway.
+
+
+//FTTSP_1_8	(CDE 18/06/2012)
+	- Change the "Unzip.exe" program location. This file must be copy in the same folder of FTTSP. If the program is released (prod configuration), then 
+	  it must be in the same folder of FTTSP.EXE. If it is open with VC++, then it must be copy into the project folder.
+
+//FTTSP_1_7	(CDE 12/03/2012)
+	- Change management of:
+		+ SERVER_NAME
+		+ Gateway of subcontractor.
+	  Now, all these parameters are managed into a Config.ini file instead of Windows Environment Variables.
+
+
+//FTTSP_1_6	(CDE 06/12/2011)
+	- Add Aetrium Dll
+	- Add verification into RunPerso application (no tester but PC for APPLI departement). In case of the .bat file was not well written, 
+	  FTTSP crashed! 
+
+
+//FTTSP_1_5	(CDE 12/10/2011)
+	- Add RASCO Dll
+	- Version is managed into About dialog box instead of logo on the first frame
+	- Add debug window on About dialog box (activated by SHIFT+CTRL+ENTER)
+	- Add Debug management 
+	- Add SUBCONTRACTOR gateway management (environment variable + management) (UTAC like)
+	- Add possibility to select an item into Revision Design combo 
+	- Add Bin and Hard bin feedback into the test window (FTTSPMainWindow)
+	- Add the class GatewayUTAC to interface with UTAC on their Autoloader tool.
+	- Add version management on DLL. Then it is possible to have the version when DDL il loaded.
+	- Window dressing on LoadProgram window
+	- Add the DLL revision into the summary file
+	
+
+//FTTSP_1_4	(CDE 01/10/2011)
+	- Add TESEC Dll 
+	- Add FTTSP uses by a PC for APPLI departement (added by OQa)
+
+
+//FTTSP_1_3	(OQa 11/04/2011)
+	- Changed LOGO INSIDE CONTACTLESS by INSIDE SECURE
+	- Added QT dll
+	- Manage Handler timeoout in "RUN" thread (SetTimer and KillTimer). The function OnTimer call Stop Button Function
+	  visible inside dll (QT).
+	- Change MapCod summary ID part coded in decimal i/o Hexadecimal
+	
+	Different path have been changed 
+	- Summaries are created now under server_name\TestFloor\Final_Test\Summaries
+	- Dll must be under server_name\TestFloor\Final_Test\Handlers
+	- Files setup must be under server_name\TestFloor\Final_Test\Setup
+
+
+//FTTSP_1_2	(OQa 26/10/2010)
+	- cosmetic modification => GUI with new logo
+	- Added MT8501 dll
+	- sent to ekb
+
+//FTTSP_1_1	(OQa - 07/06/2010)
+	
+	- Due to hangup issue in ACP, removed all "TRACE" output (comments) in program.
+	  TRACE is limited at 512 characters, and mapcod text is greater than 512 for smartshark product.
+	
+	- Modified the method to read the "product_setup.txt" file. Before space character was only one tabulation between
+	  information ('\t'). Now you can align information with the title of column with sevral tabs or space characters.
+	  Now this is easy to read the file.
+	  
+	  ==> Function modified : "BOOL CConfiguration::_Parse(CString &str, char c)". Modified only one function to keep a 
+	  maximum of compatibility with BBn functions.
+
+	  
+//FTTSP_1_0	(BBn - Nov 2009)
+	
+	- First revision released in ACP Test Area

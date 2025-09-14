@@ -1,0 +1,44 @@
+						MODIFICATIONS LIST FOR DLL HANDLER TESEC 3270
+						=============================================
+
+
+
+V1.7 (PGY 09/07/2013)
+	- Bin order for DUT from 1 to 16 was not correct. Handler is waiting for DUT 16 to 1.
+	  The issue was in HndBin function . 
+	  ==> replace : for(int i=0;i<32;i++)
+	         with :        for(int i=31;i>=0;i--)
+
+
+V1.6 (PGY 08/07/2013) ==> not used in prod
+	- After first run in UTAC, Only the first bin was send to the handler.
+      The issue was in HndBin function . 
+	  ==> replace : for(int i=0;i<=32;i--)
+	         with : for(int i=0;i< 32;i++)
+ 
+V1.5 (PGY 05/07/2013) ==> not used in prod
+				- change the HndBin function to use a test mask i/o a simple int that contains the number of active DUT.
+				  this is done to match with all other HndBin function in the diferent DLL and to solve a crash issue in UTAc
+
+V1.4 (CDE 12/06/2013) ==> Not used for prod
+	- The HndPoll function has been changed. "Test mask" is used instead of "Nb socket used".
+	  + change 'pdwActive_Sockets[0] = gdwSiteOnTestMask & ((1 << uiMax_uiSkts) - 1)' by 'pdwActive_Sockets[0] = gdwSiteOnTestMask & uiMask_uiSkts' ;
+
+V1.3 (CDE 20/06/2012) ==> Not used in prod
+	- Update the source code with all modification done in UTAC during the trip (workinf with 59U17 product)
+	  + Change the END_FRAME_BIN definition
+	  + Remove the 'clear device' action into the GPIBCleanup function
+	  + Remove the calling of GPIBCleanup into all error branch
+	  + Update the HndPoll function
+	  + Update the HndBin function
+
+V1.2 (CDE 30/03/2012) ==> Not used in prod
+	- Modification of the defines
+	- Modification of the variable names 
+
+V1.1 (CDE 30/03/2012) ==> used in UTAC for engi - handler validation 
+	- Modification of the HndInit function. Replace function ibdev by ibln and ibfind because no possibilty to connect to the the handler with ibdev.
+
+
+V1.0 (CDE 31/10/2011)
+	- Creation
